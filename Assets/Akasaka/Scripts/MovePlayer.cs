@@ -13,7 +13,7 @@ public class MovePlayer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Velocity = new Vector2(0, 0);
     }
-    void FixedUpdate()
+    void Update()
     {
         // H/V moving...
         float velocityX = 0.0f;
