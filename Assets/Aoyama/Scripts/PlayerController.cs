@@ -6,18 +6,21 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
 
-public class PlayerMove : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     GameObject Player;
+    Vector3 ShotPoint;
 
     private Rigidbody2D rb;
     private bool isFloor = false;
     private int jumpCount = 0;
-    public float rightspeed = 4.0f;
-    public float leftspeed = -4.0f;
+
+    public float rightspeed = 2.0f;
+    public float leftspeed = -2.0f;
     public float jumpheight = 200f;
     public int MaxJumpCount = 2;
     public FloorCheck floor;
+    public GameObject BulletObj;
     
     bool right = false;
     bool left = false;
@@ -27,6 +30,9 @@ public class PlayerMove : MonoBehaviour
     {
         //Rigidbodyをコンポーネントから取得
         rb = GetComponent<Rigidbody2D>();
+        //Bulletの発射位置を取得
+        ShotPoint = transform.Find("ShotPoint").localPosition;
+        
     }
 
     // Update is called once per frame
@@ -38,59 +44,65 @@ public class PlayerMove : MonoBehaviour
         //right = trueなら関数goright()を呼び出す
         if(right)
         {
-            goright();
+            GoRight();
         }
         //left = trueなら関数goleft()を呼び出す
         else if(left)
         {
-            goleft();
+            GoLeft();
         }
     }
 
     //右ボタンを押している間
-    public void rPushDown()
+    public void RPushDown()
     {
         right = true;
     }
 
     //右ボタンを押すのをやめた時
-    public void rPushUp()
+    public void RPushUp()
     {
         right = false;
     }
 
     //左ボタンを押している間
-    public void lPushDown()
+    public void LPushDown()
     {
         left = true;
     }
 
     //左ボタンを押すのをやめた時
-    public void lPushUp()
+    public void LPushUp()
     {
         left = false;
     }
 
     //Playerが画面内にいるとき、右に移動
-    public void goright()
+    public void GoRight()
     {
-        if(transform.position.x <= 2.32f)
+        if(transform.position.x <= 2.054f)
         {
             transform.Translate(new Vector2(rightspeed*Time.deltaTime,0));
         }
     }
 
     //Playerが画面内にいるとき、左に移動
-    public void goleft()
+    public void GoLeft()
     {
-        if(transform.position.x >= -2.32f)
+        if(transform.position.x >= -2.054f)
         {
             transform.Translate(new Vector2(leftspeed*Time.deltaTime,0));
         }
     }
-    
+
+    //Bulletを発射   InvokeRepeating("ContinueAttack",0,2);
+    public void AttackClick()
+    {
+        Instantiate(BulletObj,transform.position + ShotPoint,Quaternion.identity);
+    }
+
     //ジャンプボタンが押された＆ジャンプ回数が上限に達していないとき、ジャンプ
-    public void jumpClick()
+    public void JumpClick()
     {
         if(this.jumpCount < MaxJumpCount)
         {
@@ -112,4 +124,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
+
+
 }
