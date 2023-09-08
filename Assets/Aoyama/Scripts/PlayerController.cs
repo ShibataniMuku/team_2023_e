@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     public int MaxJumpCount = 2;
     public FloorCheck floor;
     public GameObject BulletObj;
+    public Slider slider;
+
+    int maxWater = 50;
+    int Water;
     
     bool right = false;
     bool left = false;
@@ -32,7 +36,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //Bulletの発射位置を取得
         ShotPoint = transform.Find("ShotPoint").localPosition;
-        
+        //Sliderを最大にする。
+        slider.value = 1;
+        //水量を最大水量と同じ値に。
+        Water = maxWater;
     }
 
     // Update is called once per frame
@@ -83,6 +90,7 @@ public class PlayerController : MonoBehaviour
         if(transform.position.x <= 2.054f)
         {
             transform.Translate(new Vector2(rightspeed*Time.deltaTime,0));
+            transform.localScale = new Vector3(0.7f,0.7f,1);
         }
     }
 
@@ -92,13 +100,26 @@ public class PlayerController : MonoBehaviour
         if(transform.position.x >= -2.054f)
         {
             transform.Translate(new Vector2(leftspeed*Time.deltaTime,0));
+            transform.localScale = new Vector3(-0.7f,0.7f,1);
         }
     }
 
     //Bulletを発射   InvokeRepeating("ContinueAttack",0,2);
     public void AttackClick()
     {
-        Instantiate(BulletObj,transform.position + ShotPoint,Quaternion.identity);
+        if(slider.value != 0)
+        {
+            Instantiate(BulletObj,transform.position + ShotPoint,Quaternion.identity);
+        
+            //水量から1を引く
+            Water = Water - 1;
+            //水量をSliderに反映。
+            slider.value = (float)Water / (float)maxWater;
+        }
+        else if(slider.value == 0)
+        {
+            Debug.Log("弾切れ");
+        }
     }
 
     //ジャンプボタンが押された＆ジャンプ回数が上限に達していないとき、ジャンプ
@@ -124,6 +145,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
 }
