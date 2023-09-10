@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    public float Speed = 20.0f;
+    public float Speed = 10.0f;
+
+    private GameObject player; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0,Speed * Time.deltaTime,0);
+        if(player.transform.localScale == new Vector3(0.7f,0.7f,1))
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector3.right * Speed;
+            this.enabled = false;
+        }
+        else if(player.transform.localScale == new Vector3(-0.7f,0.7f,1))
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector3.left * Speed;
+            this.enabled = false;
+        }
+        
     }
 
     void OnBecameInvisible()
