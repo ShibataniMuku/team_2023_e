@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Vector3 ShotPoint;
 
     private Rigidbody2D rb;
+    private Animator anim = null;
     private bool isFloor = false;
     private int jumpCount = 0;
 
@@ -34,6 +35,8 @@ public class PlayerController : MonoBehaviour
     {
         //Rigidbodyをコンポーネントから取得
         rb = GetComponent<Rigidbody2D>();
+        //Annimatorをコンポーネントから取得
+        anim = GetComponent<Animator>();
         //Bulletの発射位置を取得
         ShotPoint = transform.Find("ShotPoint").localPosition;
         //Sliderを最大にする。
@@ -110,6 +113,8 @@ public class PlayerController : MonoBehaviour
         if(slider.value != 0)
         {
             Instantiate(BulletObj,transform.position + ShotPoint,Quaternion.identity);
+            
+            anim.SetTrigger("Shot");
         
             //水量から1を引く
             Water = Water - 1;
