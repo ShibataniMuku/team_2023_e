@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float jumpheight = 200f;
     public int MaxJumpCount = 2;
     public FloorCheck floor;
+    public Hpbar damage;
     public GameObject BulletObj;
     public Slider slider;
 
@@ -37,8 +38,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //Annimatorをコンポーネントから取得
         anim = GetComponent<Animator>();
+
         //Bulletの発射位置を取得
         ShotPoint = transform.Find("ShotPoint").localPosition;
+        
         //Sliderを最大にする。
         slider.value = 1;
         //水量を最大水量と同じ値に。
@@ -67,24 +70,28 @@ public class PlayerController : MonoBehaviour
     public void RPushDown()
     {
         right = true;
+        anim.SetBool("Walk",true);
     }
 
     //右ボタンを押すのをやめた時
     public void RPushUp()
     {
         right = false;
+        anim.SetBool("Walk",false);
     }
 
     //左ボタンを押している間
     public void LPushDown()
     {
         left = true;
+        anim.SetBool("Walk",true);
     }
 
     //左ボタンを押すのをやめた時
     public void LPushUp()
     {
         left = false;
+        anim.SetBool("Walk",false);
     }
 
     //Playerが画面内にいるとき、右に移動
@@ -135,19 +142,39 @@ public class PlayerController : MonoBehaviour
             Debug.Log("ジャンプした");
             rb.velocity = new Vector2(0,jumpheight);
             jumpCount++;
+
+            anim.SetTrigger("JumpFirst");
         }
     }
 
-    //地面に触れたらジャンプ可能な回数をリセット
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //地面に触れたらジャンプ可能な回数をリセット
         if(other.gameObject.CompareTag("Floor"))
         {
             if(isFloor)
             {
                 Debug.Log("リセット");
                 jumpCount = 0;
+
+                anim.SetTrigger("JumpEnd");
             }
+        }
+        //（Enemy Tagのオブジェクトに触れたら）Damage()を呼び出す
+        else if(other.gameObject.CompareTag("Enemy"))
+        {
+            damage.Damage();
+            anim.SetTrigger("Damage");
+        }
+    }
+
+    //攻撃を受けたら（EnemyAttack Tagのオブジェクトに触れたら）Damage()を呼び出す
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "EnemyAttack")
+        {
+            damage.Damage();
+            anim.SetTrigger("Damage");
         }
     }
 }
