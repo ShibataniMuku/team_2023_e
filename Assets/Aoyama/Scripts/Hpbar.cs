@@ -23,7 +23,7 @@ public class Hpbar : MonoBehaviour
         //HPバーの最大値をHPにする
         HPbar.maxValue = HP;
          
-        //HPの初期値を0に
+        //HPの初期値を100に
         HPbar.value = 100;
     }
  
@@ -33,7 +33,7 @@ public class Hpbar : MonoBehaviour
         //前のフレームから経過した秒数を加算
         currentTime += Time.deltaTime;
  
-        //毎秒処理を行う
+        //2秒毎に処理を行う
         if(currentTime >= 2.0f)
         {
             HPbar.value += -1;
