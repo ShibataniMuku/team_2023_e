@@ -25,6 +25,7 @@ public class BulletMove : MonoBehaviour
         else if(player.transform.localScale == new Vector3(-0.7f,0.7f,1))
         {
             GetComponent<Rigidbody2D>().velocity = Vector3.left * Speed;
+            transform.localScale = new Vector3(-0.5f,0.5f,1);
             this.enabled = false;
         }
         
