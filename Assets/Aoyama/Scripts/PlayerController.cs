@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
     //攻撃を受けたら（EnemyAttack Tagのオブジェクトに触れたら）Damage()を呼び出す
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "EnemyAttack")
+        if(collision.tag == "EnemyAttack")
         {
             damage.Damage();
             anim.SetTrigger("Damage");

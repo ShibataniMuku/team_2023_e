@@ -40,6 +40,7 @@ public class Hpbar : MonoBehaviour
             currentTime = 0;
         }
 
+        //Hpが0になるとゲームオーバー
         if(HPbar.value == 0 && GameOver == false)
         {
             GameOver = true;
@@ -47,8 +48,15 @@ public class Hpbar : MonoBehaviour
         }
     }
 
+    //Hpが減る
     public void Damage()
     {
         HPbar.value += -50;
+    }
+
+    //Hpが回復する
+    public void Heal()
+    {
+        HPbar.value += 50;
     }
 }
