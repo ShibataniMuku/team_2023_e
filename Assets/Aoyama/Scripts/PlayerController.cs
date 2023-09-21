@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public GameObject BulletObj;
     public Slider slider;
 
-    int maxWater = 50;
+    int maxWater = 50000;
     int Water;
     
     bool right = false;
@@ -66,28 +66,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //右ボタンを押している間
+    //右ボタンを押した時
     public void RPushDown()
     {
         right = true;
         anim.SetBool("Walk",true);
     }
 
-    //右ボタンを押すのをやめた時
+    //右ボタンを離した時
     public void RPushUp()
     {
         right = false;
         anim.SetBool("Walk",false);
     }
 
-    //左ボタンを押している間
+    //左ボタンを押した時
     public void LPushDown()
     {
         left = true;
         anim.SetBool("Walk",true);
     }
 
-    //左ボタンを押すのをやめた時
+    //左ボタンを離した時
     public void LPushUp()
     {
         left = false;
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Bulletを発射   InvokeRepeating("ContinueAttack",0,2);
-    public void AttackClick()
+    public void AttackDown()
     {
         if(slider.value != 0)
         {
@@ -176,5 +176,10 @@ public class PlayerController : MonoBehaviour
             damage.Damage();
             anim.SetTrigger("Damage");
         }
+    }
+
+    public void GameOver()
+    {
+        anim.SetBool("GameOver",true);
     }
 }

@@ -9,6 +9,7 @@ public class Hpbar : MonoBehaviour
     Slider HPbar;
     //HPを定義
     public int HP = 100;
+    public PlayerController gameover;
 
     bool GameOver = false;
  
@@ -44,6 +45,7 @@ public class Hpbar : MonoBehaviour
         if(HPbar.value == 0 && GameOver == false)
         {
             GameOver = true;
+            gameover.GameOver();
             Debug.Log("ゲームオーバー");
         }
     }
