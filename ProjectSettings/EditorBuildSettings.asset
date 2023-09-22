@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Aoyama/Scenes/StageSelectScene.unity
+    guid: 30ee29e0183b57046a5c7d7c92b04e1e
+  - enabled: 1
+    path: Assets/Aoyama/Scenes/TitleScene.unity
+    guid: fa55a414b0d35eb469bb43bb9e13a927
+  - enabled: 1
+    path: Assets/Aoyama/Scenes/PlayScene.unity
+    guid: 7fa0219150681ce4a8f7dc79ef61025e
   m_configObjects: {}

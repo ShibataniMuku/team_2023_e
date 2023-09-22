@@ -9,6 +9,7 @@ public class Hpbar : MonoBehaviour
     Slider HPbar;
     //HPを定義
     public int HP = 100;
+    public PlayerController gameover;
 
     bool GameOver = false;
  
@@ -23,7 +24,7 @@ public class Hpbar : MonoBehaviour
         //HPバーの最大値をHPにする
         HPbar.maxValue = HP;
          
-        //HPの初期値を0に
+        //HPの初期値を100に
         HPbar.value = 100;
     }
  
@@ -33,22 +34,31 @@ public class Hpbar : MonoBehaviour
         //前のフレームから経過した秒数を加算
         currentTime += Time.deltaTime;
  
-        //毎秒処理を行う
+        //2秒毎に処理を行う
         if(currentTime >= 2.0f)
         {
             HPbar.value += -1;
             currentTime = 0;
         }
 
+        //Hpが0になるとゲームオーバー
         if(HPbar.value == 0 && GameOver == false)
         {
             GameOver = true;
+            gameover.GameOver();
             Debug.Log("ゲームオーバー");
         }
     }
 
+    //Hpが減る
     public void Damage()
     {
         HPbar.value += -50;
+    }
+
+    //Hpが回復する
+    public void Heal()
+    {
+        HPbar.value += 50;
     }
 }
