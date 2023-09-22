@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class RenderFloor : MonoBehaviour{
     // 床を描画...
-    BoxCollider2D bc;
     public GameObject FloorLeft;
     public GameObject FloorMiddle;
     public GameObject FloorRight;
     void Start(){
-        bc = GetComponent<BoxCollider2D>();
+        BoxCollider2D bc = GetComponent<BoxCollider2D>();
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
         // スケール取得...
-        float width = transform.size.x;
+        float width = transform.localScale.x;
         // spriteに合わせるため幅を0.5単位に丸める...
         width = width < 0.5f ? 0.5f : Mathf.Round(width * 2) / 2;
         // スケールを1,1,1に...
-        transform.size = Vector3.one;
+        transform.localScale = Vector3.one;
         // SpriteRenderer消す...
-        GetComponent<SpriteRenderer>().enabled = false;
+        sr.enabled = false;
         // 当たり判定を変更...
-        bc.size = new Vector2(width, 0.4);
+        bc.size = new Vector2(width, 0.4f);
 
         // spriteを描画...
         for(int i = 0; i <= width * 2; i++){
