@@ -41,13 +41,4 @@ public class MoveScene : MonoBehaviour
             SceneManager.LoadScene("PlayScene_s");
         }
     }
-
-
-
-
-    //ゲームクリアシーンへ移行
-    public void GameClear()
-    {
-        SceneManager.LoadScene("GameClear");
-    }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -22,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public int MaxJumpCount = 2;
     public FloorCheck floor;
     public Hpbar damage;
-    public MoveScene gameclear;
     public GameObject BulletObj;
     public Slider slider;
 
@@ -179,7 +179,8 @@ public class PlayerController : MonoBehaviour
         }
         else if(collision.tag == "Goal")
         {
-            gameclear.GameClear();
+            SceneManager.LoadScene("GameClear");
+            GameOverOrClear.CurrentSceneName();
         }
     }
 }

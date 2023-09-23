@@ -42,7 +42,7 @@ public class Hpbar : MonoBehaviour
         //Hpが0になるとゲームオーバー
         if(HPbar.value == 0)
         {
-            GameOver.CurrentSceneName();
+            GameOverOrClear.CurrentSceneName();
             SceneManager.LoadScene("GameOver");
             Debug.Log("ゲームオーバー");
         }
