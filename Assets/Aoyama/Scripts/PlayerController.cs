@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public int MaxJumpCount = 2;
     public FloorCheck floor;
     public Hpbar damage;
+    public MoveScene gameclear;
     public GameObject BulletObj;
     public Slider slider;
 
@@ -176,10 +177,9 @@ public class PlayerController : MonoBehaviour
             damage.Damage();
             anim.SetTrigger("Damage");
         }
-    }
-
-    public void GameOver()
-    {
-        anim.SetBool("GameOver",true);
+        else if(collision.tag == "Goal")
+        {
+            gameclear.GameClear();
+        }
     }
 }

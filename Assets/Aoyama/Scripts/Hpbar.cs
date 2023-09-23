@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hpbar : MonoBehaviour
 {
@@ -9,9 +10,6 @@ public class Hpbar : MonoBehaviour
     Slider HPbar;
     //HPを定義
     public int HP = 100;
-    public PlayerController gameover;
-
-    bool GameOver = false;
  
     //現在の時間
     private float currentTime = 0f;
@@ -42,10 +40,10 @@ public class Hpbar : MonoBehaviour
         }
 
         //Hpが0になるとゲームオーバー
-        if(HPbar.value == 0 && GameOver == false)
+        if(HPbar.value == 0)
         {
-            GameOver = true;
-            gameover.GameOver();
+            GameOver.CurrentSceneName();
+            SceneManager.LoadScene("GameOver");
             Debug.Log("ゲームオーバー");
         }
     }
