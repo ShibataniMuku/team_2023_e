@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RetryButton : MonoBehaviour
+public class NextButton : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class RetryButton : MonoBehaviour
         
     }
 
-    public void RetryClick()
+    public void NextClick()
     {
-        GameOverOrClear.BackToBeforeScene();
+        GameOverOrClear.NextScene();
     }
 }
