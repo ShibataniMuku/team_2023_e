@@ -16,6 +16,7 @@ public class NextButton : MonoBehaviour
         
     }
 
+    //次のシーンへ移行する関数を他スクリプトから呼び出す
     public void NextClick()
     {
         GameOverOrClear.NextScene();

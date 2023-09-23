@@ -16,6 +16,7 @@ public class RetryButton : MonoBehaviour
         
     }
 
+    //直前のシーンへ移行するための関数を他スクリプトから呼び出す
     public void RetryClick()
     {
         GameOverOrClear.BackToBeforeScene();
