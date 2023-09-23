@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Guard
   - Arrow
+  - Goal
   layers:
   - Default
   - TransparentFX
