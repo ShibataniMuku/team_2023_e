@@ -19,8 +19,14 @@ EditorBuildSettings:
     guid: 7fa0219150681ce4a8f7dc79ef61025e
   - enabled: 1
     path: Assets/Aoyama/Scenes/PlayScene_s.unity
-    guid: 2a74efb4d4272314e99d21f6e095c677
+    guid: 9fb32cf2860b1974bb630db013319c85
   - enabled: 1
     path: Assets/Aoyama/Scenes/PlayScene_u.unity
-    guid: 13e920fe0c92967488188840c399449f
+    guid: 504034b8932fd3b489e0be2347178cad
+  - enabled: 1
+    path: Assets/Aoyama/Scenes/GameOver.unity
+    guid: 1d833752ebce5b041870d1450178d27d
+  - enabled: 1
+    path: Assets/Aoyama/Scenes/GameClear.unity
+    guid: 4b0fd41eff0a59448bf5b880a18c1d58
   m_configObjects: {}
