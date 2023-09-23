@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//静的スクリプト
 public static class GameOverOrClear
 {
     public static string sceneName;
 
+    //現在のシーン名を読み込む
     public static void CurrentSceneName()
     {
         sceneName = SceneManager.GetActiveScene().name;
@@ -20,6 +22,7 @@ public static class GameOverOrClear
         SceneManager.LoadScene(sceneName);
     }
 
+    //現在のステージに合わせて次のステージに移行
     public static void NextScene()
     {
         if(sceneName == "PlayScene_t")

@@ -17,6 +17,7 @@ public class BackButton : MonoBehaviour
         
     }
 
+    //タイトルシーンへ移行
     public void BackClick()
     {
         SceneManager.LoadScene("TitleScene");
