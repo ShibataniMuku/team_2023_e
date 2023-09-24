@@ -26,7 +26,7 @@ public class KeyOperation : MonoBehaviour{
         }
         // 攻撃 = Xキー...
         if(Input.GetKeyDown(KeyCode.X)){
-            PlayerController.AttackClick();
+            PlayerController.AttackDown();
         }
     }
 }
