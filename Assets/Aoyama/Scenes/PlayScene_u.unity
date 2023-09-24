@@ -3189,7 +3189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
-  gameover: {fileID: 2015396965}
 --- !u!114 &1850671814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3302,7 +3301,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2a9de8c937df30949b3ceb356cd84355, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3377,7 +3376,6 @@ MonoBehaviour:
   MaxJumpCount: 2
   floor: {fileID: 1573079121}
   damage: {fileID: 1850671813}
-  gameclear: {fileID: 2015396965}
   BulletObj: {fileID: 2796708401157745250, guid: ca3ceaabc3894b74baa5f4573dd4fba7, type: 3}
   slider: {fileID: 1905589712}
 --- !u!70 &1853566161
