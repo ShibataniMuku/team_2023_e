@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -176,10 +177,10 @@ public class PlayerController : MonoBehaviour
             damage.Damage();
             anim.SetTrigger("Damage");
         }
-    }
-
-    public void GameOver()
-    {
-        anim.SetBool("GameOver",true);
+        else if(collision.tag == "Goal")
+        {
+            SceneManager.LoadScene("GameClear");
+            GameOverOrClear.CurrentSceneName();
+        }
     }
 }
