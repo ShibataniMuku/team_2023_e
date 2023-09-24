@@ -12,10 +12,13 @@ public class PlayerController : MonoBehaviour
     GameObject Player;
     Vector3 ShotPoint;
 
+    private AudioSource audioSource;
     private Rigidbody2D rb;
     private Animator anim = null;
     private bool isFloor = false;
     private int jumpCount = 0;
+    
+
 
     public float rightspeed = 2.0f;
     public float leftspeed = -2.0f;
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public Hpbar damage;
     public GameObject BulletObj;
     public Slider slider;
+    public AudioClip shot;
+    public AudioClip jump;
 
     int maxWater = 50000;
     int Water;
@@ -39,6 +44,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //Annimatorをコンポーネントから取得
         anim = GetComponent<Animator>();
+        //AudioSourceをコンポーネントから取得
+        audioSource = GetComponent<AudioSource>();
 
         //Bulletの発射位置を取得
         ShotPoint = transform.Find("ShotPoint").localPosition;
@@ -123,6 +130,7 @@ public class PlayerController : MonoBehaviour
             Instantiate(BulletObj,transform.position + ShotPoint,Quaternion.identity);
             
             anim.SetTrigger("Shot");
+            audioSource.PlayOneShot(shot);
         
             //水量から1を引く
             Water = Water - 1;
@@ -145,6 +153,7 @@ public class PlayerController : MonoBehaviour
             jumpCount++;
 
             anim.SetTrigger("JumpFirst");
+            audioSource.PlayOneShot(jump);
         }
     }
 
