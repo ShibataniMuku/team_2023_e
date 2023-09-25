@@ -9,6 +9,9 @@ TagManager:
   - Guard
   - Arrow
   - Goal
+  - Bullet
+  - UV
+  - IR
   layers:
   - Default
   - TransparentFX
