@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4976674415284660027}
   - component: {fileID: 8007960858121720378}
   - component: {fileID: 3736844065076411999}
-  - component: {fileID: 8577175373989206920}
+  - component: {fileID: 625224357038934138}
   - component: {fileID: 560998760157942183}
   - component: {fileID: 1237993997572455504}
   - component: {fileID: 4610229650772119651}
@@ -269,7 +269,7 @@ MonoBehaviour:
   speed: 0
   gravity: 0
   nonVisibleAct: 0
---- !u!114 &8577175373989206920
+--- !u!114 &625224357038934138
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,11 +278,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6655691235300953274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf20f8d8b252c74ab387d33d43a864f, type: 3}
+  m_Script: {fileID: 11500000, guid: 42914d248de450146a848257f8d52bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroySound: {fileID: 0}
   enemyHP: 1
+  bulletHitSound: {fileID: 8300000, guid: f419ccad2f2e60f48aa6e5767306a584, type: 3}
+  destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
 --- !u!114 &560998760157942183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.15637875, y: -0.15637785}
