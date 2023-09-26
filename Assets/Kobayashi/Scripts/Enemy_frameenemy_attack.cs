@@ -23,27 +23,14 @@ public class Enemy_frameenemy_attack : MonoBehaviour
         {
             attackObj.SetActive(false);
         }
+
+        InvokeRepeating("AttackThreeWay",0,2);
     }
 
     // Update is called once per frame
     void Update()
     {
-        AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
 
-        // 通常の状態
-        if (currentState.IsName("idle"))
-        {
-            if (timer > interval)
-            {
-                // 攻撃を3方向に実行
-                AttackThreeWay();
-                timer = 0.0f;
-            }
-            else
-            {
-                timer += Time.deltaTime;
-            }
-        }
     }
 
     // 攻撃を3方向に実行

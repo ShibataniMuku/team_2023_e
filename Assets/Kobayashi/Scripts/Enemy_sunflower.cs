@@ -23,6 +23,8 @@ public class Enemy_sunflower : MonoBehaviour
         {
             attackObj.SetActive(false);
         }
+
+        InvokeRepeating("Attack",0,2);
     }
 
     // Update is called once per frame
@@ -30,24 +32,12 @@ public class Enemy_sunflower : MonoBehaviour
     {
         AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
 
-        //通常の状態
-        if (currentState.IsName("idle"))
-        {
-            if(timer > interval)
-            {
-                Attack();
-                anim.SetTrigger("attack");
-                timer = 0.0f;
-            }
-            else
-            {
-                timer += Time.deltaTime;
-            }
-        }
+
     }
      
-    public void Attack()
+    private void Attack()
     {
+        anim.SetTrigger("attack");
         Debug.Log("a");
         GameObject g = Instantiate(attackObj);
         g.transform.SetParent(transform);

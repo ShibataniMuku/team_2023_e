@@ -186,6 +186,11 @@ public class PlayerController : MonoBehaviour
             damage.Damage();
             anim.SetTrigger("Damage");
         }
+        else if(collision.tag == "Arrow")
+        {
+            damage.Damage();
+            anim.SetTrigger("Damage");
+        }
         else if(collision.tag == "Goal")
         {
             SceneManager.LoadScene("GameClear");
