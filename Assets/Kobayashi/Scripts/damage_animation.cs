@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class damage_animation : MonoBehaviour
 {
     private Animator animator;
     public int enemyHP; // 敵のHP

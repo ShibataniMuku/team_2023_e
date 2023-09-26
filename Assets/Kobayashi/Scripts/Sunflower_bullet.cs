@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class Sunflower_bullet : MonoBehaviour
 {
     [Header("スピード")] public float speed = 3.0f;
     [Header("最大移動距離")] public float maxDistance = 100.0f;

@@ -34,7 +34,7 @@ public class Enemy_bird : MonoBehaviour
         }
 
         // プレイヤーを検知した場合か、画面内にいる場合に移動
-        if (playerDetected || nonVisibleAct && sr.isVisible)
+        if (playerDetected || sr.isVisible)
         {
             int xVector = -1;
             rb.velocity = new Vector2(xVector * speed, -gravity);

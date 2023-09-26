@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveDown : MonoBehaviour
+public class UVIR : MonoBehaviour
 {
     public float speed = 5.0f; // 速度をインスペクターウィンドウで設定
 
