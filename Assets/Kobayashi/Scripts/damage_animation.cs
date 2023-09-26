@@ -4,6 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     private Animator animator;
     public int enemyHP; // 敵のHP
+    public AudioClip bulletHitSound; // Bulletが当たったときのサウンド
     public AudioClip destroySound;
 
     private bool isDestroyed = false; // 破壊済みフラグ
@@ -31,6 +32,10 @@ public class EnemyController : MonoBehaviour
 
             // 敵オブジェクトを破壊する
             Destroy(gameObject, 0.5f);
+
+            // 追加
+            // 敵の死亡フラグを立てる
+            GetComponent<Enemy_bird>().SetDead(true);
         }
         else
         {
@@ -47,6 +52,8 @@ public class EnemyController : MonoBehaviour
             enemyHP -= 1;
             // プレイヤーの弾を削除する
             Destroy(other.gameObject);
+            // Bulletが当たったときのサウンドを再生
+            AudioSource.PlayClipAtPoint(bulletHitSound, transform.position);
         }
     }
 }

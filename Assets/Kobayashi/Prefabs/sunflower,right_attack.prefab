@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8013785395625428224}
   - component: {fileID: 3034800495396856650}
   - component: {fileID: 7951403039284185505}
-  - component: {fileID: 2740515469067626352}
+  - component: {fileID: 8619098117652602700}
   - component: {fileID: 5949527308271934459}
   - component: {fileID: 6952116760814008044}
   - component: {fileID: 1624498015174840890}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackObj: {fileID: 4107441756123133379}
   interval: 3
---- !u!114 &2740515469067626352
+--- !u!114 &8619098117652602700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,11 +114,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2466169026438153437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf20f8d8b252c74ab387d33d43a864f, type: 3}
+  m_Script: {fileID: 11500000, guid: 42914d248de450146a848257f8d52bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
   enemyHP: 1
+  bulletHitSound: {fileID: 8300000, guid: f419ccad2f2e60f48aa6e5767306a584, type: 3}
+  destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
 --- !u!95 &5949527308271934459
 Animator:
   serializedVersion: 5
@@ -204,7 +205,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.16008574, y: -3.5218706}
@@ -262,7 +263,7 @@ GameObject:
   - component: {fileID: 2696573606183465847}
   m_Layer: 0
   m_Name: sunflower,right_bullet.png
-  m_TagString: Enemy
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -363,7 +364,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5917296, y: -0.5918288}

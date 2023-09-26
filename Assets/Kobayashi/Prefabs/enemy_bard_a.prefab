@@ -119,10 +119,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7465625, y: 0.33398813}
+  m_Offset: {x: -0.7465625, y: 0.43453938}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7696066, y: 0.82202375}
+  m_Size: {x: 0.7696066, y: 0.62092125}
   m_EdgeRadius: 0
 --- !u!61 &5532068462367050628
 BoxCollider2D:
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.5304525, y: -0.31434172}
@@ -219,7 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42914d248de450146a848257f8d52bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 1
+  enemyHP: 2
+  bulletHitSound: {fileID: 8300000, guid: f419ccad2f2e60f48aa6e5767306a584, type: 3}
   destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
 --- !u!114 &8042100847839124882
 MonoBehaviour:
