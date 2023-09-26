@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - UV
   - IR
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX

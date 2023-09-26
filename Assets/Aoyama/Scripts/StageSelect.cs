@@ -31,7 +31,7 @@ public class StageSelect : MonoBehaviour
         {
             RightArrow.SetActive(false);
         }
-        ////カメラの位置xが0（太陽ステージが映っていたら）RightArrowを非表示に
+        //カメラの位置xが0（太陽ステージが映っていたら）RightArrowを非表示に
         else
         {
             RightArrow.SetActive(true);

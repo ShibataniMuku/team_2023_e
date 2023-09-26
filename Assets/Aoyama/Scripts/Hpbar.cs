@@ -51,7 +51,7 @@ public class Hpbar : MonoBehaviour
     //Hpが減る
     public void Damage()
     {
-        HPbar.value += -50;
+        HPbar.value += -5;
     }
 
     //Hpが回復する

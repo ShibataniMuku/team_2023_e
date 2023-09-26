@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveDown : MonoBehaviour
+public class UVIR : MonoBehaviour
 {
     public float speed = 5.0f; // 速度をインスペクターウィンドウで設定
 
-    private void Update()
+    private SpriteRenderer sr = null;
+
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    public void Update()
+    {
+        if(this.transform.position.y <= -2)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnWillRenderObject()
     {
         // オブジェクトを下に移動させる
         transform.Translate(Vector3.down * speed * Time.deltaTime);
-    }
-
-    // 画面外に出たらオブジェクトを破壊する
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
     }
 }

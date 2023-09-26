@@ -18,9 +18,6 @@ public class Enemy_bird : MonoBehaviour
     private GameObject player; // プレイヤーオブジェクトの参照
     private bool playerDetected = false; // プレイヤーを検知したかどうかのフラグ
 
-    // 追加
-    private bool isDead = false;    // 敵が倒れたかどうかのフラグ
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,34 +27,21 @@ public class Enemy_bird : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDead)
+        // プレイヤーのY座標が指定した高さ以下になったら敵が動き始める
+        if (!playerDetected && player.transform.position.y >= playerDetectionHeight)
         {
-            // プレイヤーのY座標が指定した高さ以下になったら敵が動き始める
-            if (!playerDetected && player.transform.position.y >= playerDetectionHeight)
-            {
-                playerDetected = true; // プレイヤーを検知したらフラグを立てる
-            }
+            playerDetected = true; // プレイヤーを検知したらフラグを立てる
+        }
 
-            // プレイヤーを検知した場合か、画面内にいる場合に移動
-            if (playerDetected || nonVisibleAct && sr.isVisible)
-            {
-                int xVector = -1;
-                rb.velocity = new Vector2(xVector * speed, -gravity);
-            }
-            else
-            {
-                rb.Sleep();
-            }
+        // プレイヤーを検知した場合か、画面内にいる場合に移動
+        if (playerDetected || sr.isVisible)
+        {
+            int xVector = -1;
+            rb.velocity = new Vector2(xVector * speed, -gravity);
         }
         else
         {
-            // 敵が倒れたら移動を停止する
-            rb.velocity = Vector2.zero;
+            rb.Sleep();
         }
-    }
-
-    public void SetDead(bool dead)
-    {
-        isDead = dead;
     }
 }
