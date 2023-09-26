@@ -24,14 +24,11 @@ public class Enemy_sunflower : MonoBehaviour
             attackObj.SetActive(false);
         }
 
-        InvokeRepeating("Attack",0,2);
     }
 
     // Update is called once per frame
     void Update()
     {
-        AnimatorStateInfo currentState = anim.GetCurrentAnimatorStateInfo(0);
-
 
     }
      
