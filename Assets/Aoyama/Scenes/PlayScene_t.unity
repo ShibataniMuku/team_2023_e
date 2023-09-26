@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 1
+  bulletHitSound: {fileID: 0}
   destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
 --- !u!50 &80639244
 Rigidbody2D:
@@ -797,6 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 1
+  bulletHitSound: {fileID: 0}
   destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
 --- !u!50 &173711744
 Rigidbody2D:
@@ -2125,6 +2127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 1
+  bulletHitSound: {fileID: 0}
   destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
 --- !u!50 &682919084
 Rigidbody2D:
@@ -3270,7 +3273,7 @@ Animator:
   m_GameObject: {fileID: 1012070504}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46d140be195e84846807beda926bccdb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 762a697086941c84ba32c33cca3a859c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3307,6 +3310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf20f8d8b252c74ab387d33d43a864f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletHitSound: {fileID: 8300000, guid: f419ccad2f2e60f48aa6e5767306a584, type: 3}
   destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
   enemyHP: 1
 --- !u!114 &1012070510
@@ -4822,6 +4826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: 1
+  bulletHitSound: {fileID: 0}
   destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
 --- !u!50 &1678077134
 Rigidbody2D:
@@ -5362,7 +5367,7 @@ Animator:
   m_GameObject: {fileID: 1730884410}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9190cb04a5b51e34bb998266ef64edec, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2225cc128d972534b9c3eaac7b28ea4a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5385,8 +5390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf20f8d8b252c74ab387d33d43a864f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletHitSound: {fileID: 8300000, guid: f419ccad2f2e60f48aa6e5767306a584, type: 3}
   destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
-  enemyHP: 1
+  enemyHP: 10
 --- !u!114 &1730884416
 MonoBehaviour:
   m_ObjectHideFlags: 0
