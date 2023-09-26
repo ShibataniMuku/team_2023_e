@@ -3,7 +3,9 @@ guid: 42914d248de450146a848257f8d52bf3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bulletHitSound: {fileID: 8300000, guid: f419ccad2f2e60f48aa6e5767306a584, type: 3}
+  - destroySound: {fileID: 8300000, guid: 6eb107178c286fe48bd994ff044a4daf, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
