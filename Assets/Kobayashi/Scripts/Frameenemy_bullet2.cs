@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sunflower_bullet : MonoBehaviour
+public class Frameenemy_bullet2 : MonoBehaviour
 {
     public float Speed = -5.0f;
 
@@ -19,6 +19,11 @@ public class Sunflower_bullet : MonoBehaviour
     }
 
     void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(this.gameObject);
     }
