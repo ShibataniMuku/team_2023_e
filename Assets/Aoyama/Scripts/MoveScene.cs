@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MoveScene : MonoBehaviour
 {
+    private AudioSource audioSource;
+
     public GameObject Camera;
+    public AudioClip tap;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,11 +25,23 @@ public class MoveScene : MonoBehaviour
     //タイトル画面からステージセレジト画面への移行
     public void PlayInTitleClick()
     {
-            SceneManager.LoadScene("StageSelectScene");
+        Invoke("SceneInTitle",0.5f);
+        audioSource.PlayOneShot(tap);
+    }
+
+    void SceneInTitle()
+    {
+        SceneManager.LoadScene("StageSelectScene");
     }
 
     //ステージセレジト画面からプレイ画面への移行
     public void PlayInStageSelectClick()
+    {
+        Invoke("InStageSelect",0.5f);
+        audioSource.PlayOneShot(tap);
+    }
+
+    void InStageSelect()
     {
         if(Camera.transform.position.x == 0)
         {

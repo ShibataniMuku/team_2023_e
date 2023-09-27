@@ -23,7 +23,6 @@ public class AutoMove : MonoBehaviour
              Debug.Log("Rigidbody2D コンポーネントが見つかりません。");
              // エラー処理などを追加するか、適切な対処方法を考えてください。
         }
-        initialPosition = transform.position;
     }
 
     void Update()

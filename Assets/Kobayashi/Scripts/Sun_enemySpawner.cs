@@ -11,10 +11,10 @@ public class Sun_enemySpawner : MonoBehaviour
     void Start()
     {
         // 18秒後に敵生成を開始
-        InvokeRepeating("SpawnRandomEnemy", 18.0f, spawnInterval);
+        InvokeRepeating("SpawnRandomEnemy", 5.0f, spawnInterval);
         
         // 生成位置の範囲を設定
-        spawnPosition = new Vector3(Random.Range(2.7f, -2.7f), Random.Range(0f, -3f), 0f);
+        spawnPosition = new Vector3(2, Random.Range(4f, 0f), 0f);
     }
 
     // ランダムな位置に敵を生成するメソッド

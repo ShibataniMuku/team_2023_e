@@ -16,6 +16,7 @@ TagManager:
   - Bard
   - Flower
   - Frame
+  - Boss
   layers:
   - Default
   - TransparentFX

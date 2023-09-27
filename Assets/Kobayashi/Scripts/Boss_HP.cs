@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss_HP : MonoBehaviour
 {
@@ -8,14 +9,17 @@ public class Boss_HP : MonoBehaviour
     public int enemyHP; // 敵のHP
     public AudioClip bulletHitSound; // Bulletが当たったときのサウンド
     public AudioClip destroySound;
-    public AudioClip otherSound; // 別のサウンド
+    public GameObject BGM;
 
+    private AudioSource audioSource;
     private bool isDestroyed = false; // 破壊済みフラグ
     private bool hasPlayedSound = false; // サウンド再生フラグ
+
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -25,6 +29,7 @@ public class Boss_HP : MonoBehaviour
         {
             animator.SetInteger("HP", 0);
             isDestroyed = true; // 破壊済みフラグを立てる
+            BGM.SetActive(false);
 
             if (!hasPlayedSound)
             {
@@ -32,8 +37,7 @@ public class Boss_HP : MonoBehaviour
                 AudioSource.PlayClipAtPoint(destroySound, transform.position);
                 hasPlayedSound = true; // サウンド再生フラグを立てる
 
-                // 別のサウンドを再生するためのコルーチンを開始
-                StartCoroutine(PlayOtherSoundAfterDelay(3.0f)); // 3秒後に再生
+                Invoke("Clear",3f);
             }
 
             // 敵オブジェクトを破壊する
@@ -62,10 +66,11 @@ public class Boss_HP : MonoBehaviour
         }
     }
 
-    // 指定の遅延時間後に別のサウンドを再生するコルーチン
-    private IEnumerator PlayOtherSoundAfterDelay(float delay)
+    private void Clear()
     {
-        yield return new WaitForSeconds(delay);
-        AudioSource.PlayClipAtPoint(otherSound, transform.position);
+        Debug.Log("%");
+        SceneManager.LoadScene("GameClear");
+        GameOverOrClear.CurrentSceneName();
+        
     }
 }

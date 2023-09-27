@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StageSelect : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    public AudioClip tap;
     public GameObject RightArrow;
     public GameObject LeftArrow;
 
@@ -12,6 +15,7 @@ public class StageSelect : MonoBehaviour
     {
         //最初の位置を固定
         this.transform.position = new Vector3(0,0,-10);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,11 +47,13 @@ public class StageSelect : MonoBehaviour
     public void RightArrowClick()
     {
         this.transform.position = new Vector3(this.transform.position.x + 5,0,-10);
+        audioSource.PlayOneShot(tap);
     }
 
     //カメラをステージ選択のために左に移動
     public void LeftArrowClick()
     {
         this.transform.position = new Vector3(this.transform.position.x + -5,0,-10);
+        audioSource.PlayOneShot(tap);
     }
 }

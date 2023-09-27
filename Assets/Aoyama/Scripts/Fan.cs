@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Fan : MonoBehaviour
 {
+    private AudioSource audioSource;
+
     public Hpbar heal;
     public PlayerController waterHeal;
+    public AudioClip get;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //AudioSourceをコンポーネントから取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class Fan : MonoBehaviour
             heal.Heal();
             waterHeal.WaterHeal();
             Destroy(this.gameObject);
+            audioSource.PlayOneShot(get);
         }
     }
 }
