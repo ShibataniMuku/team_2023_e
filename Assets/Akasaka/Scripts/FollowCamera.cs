@@ -6,6 +6,7 @@ public class FollowCamera : MonoBehaviour
 {
     public GameObject Player;
     public float MoveRate;
+    
     void FixedUpdate()
     {
         float PlayerPosY = Player.transform.position.y;
