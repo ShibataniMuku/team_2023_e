@@ -206,6 +206,11 @@ public class PlayerController : MonoBehaviour
             damage.UVDamage();
             anim.SetTrigger("Damage");
         }
+        else if(collision.tag == "Boss")
+        {
+            damage.BossDamage();
+            anim.SetTrigger("Damage");
+        }
         else if(collision.tag == "Frame")
         {
             damage.FrameDamage();

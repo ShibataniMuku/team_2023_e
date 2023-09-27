@@ -460,7 +460,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8907dfafdd590cf45b2c15cd98071440, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.441
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -909,6 +909,7 @@ GameObject:
   - component: {fileID: 347894021}
   - component: {fileID: 347894020}
   - component: {fileID: 347894019}
+  - component: {fileID: 347894026}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -928,7 +929,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.135
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1085,9 +1086,9 @@ MonoBehaviour:
   jumpheight: 8
   MaxJumpCount: 2
   floor: {fileID: 716413467}
-  damage: {fileID: 0}
+  damage: {fileID: 1850671813}
   BulletObj: {fileID: 2796708401157745250, guid: ca3ceaabc3894b74baa5f4573dd4fba7, type: 3}
-  slider: {fileID: 0}
+  slider: {fileID: 1905589712}
   shot: {fileID: 8300000, guid: d61da581f81ecc84b98d4ebbb1aa3a5a, type: 3}
   jump: {fileID: 8300000, guid: 6cb1e555508cdba4587e1f98c13ad1df, type: 3}
 --- !u!50 &347894023
@@ -1187,6 +1188,19 @@ Transform:
   - {fileID: 299153572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &347894026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347894018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab404fb24ae1ec44d92e6e5679536037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerController: {fileID: 347894022}
 --- !u!1 &369064955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +3272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heal: {fileID: 1850671813}
+  waterHeal: {fileID: 0}
+  get: {fileID: 0}
 --- !u!1 &1668553699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,6 +3373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guard: {fileID: 0}
+  get: {fileID: 0}
 --- !u!58 &1668553703
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4395,6 +4412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
+  tap: {fileID: 0}
 --- !u!4 &2015396966
 Transform:
   m_ObjectHideFlags: 0

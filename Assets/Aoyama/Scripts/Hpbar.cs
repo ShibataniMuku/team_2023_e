@@ -10,7 +10,7 @@ public class Hpbar : MonoBehaviour
     Slider HPbar;
     //HPを定義
     public int HP = 100;
- 
+
     //現在の時間
     private float currentTime = 0f;
  
@@ -19,6 +19,7 @@ public class Hpbar : MonoBehaviour
     {
         //HPバーを取得
         HPbar = GameObject.Find("Hpbar").GetComponent<Slider>();
+
         //HPバーの最大値をHPにする
         HPbar.maxValue = HP;
          
@@ -71,12 +72,17 @@ public class Hpbar : MonoBehaviour
 
     public void UVDamage()
     {
-        HPbar.value += -1;
+        HPbar.value += -2;
+    }
+
+    public void BossDamage()
+    {
+        HPbar.value += -5;
     }
 
     //Hpが回復する
     public void Heal()
     {
-        HPbar.value += 50;
+        HPbar.value += 30;
     }
 }
