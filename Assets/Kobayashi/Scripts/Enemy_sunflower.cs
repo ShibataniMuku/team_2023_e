@@ -4,42 +4,41 @@ using UnityEngine;
 
 public class Enemy_sunflower : MonoBehaviour
 {
-    [Header("攻撃オブジェクト")] public GameObject attackObj;
-    [Header("攻撃間隔")] public float interval;
+    GameObject Player;
+    Vector3 BulletPoint;
 
-    private Animator anim;
-    private float timer;
+    public GameObject Sunflower_bullet;
 
+    private Animator anim = null;
+
+    bool attack = false;
+    
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        if (anim == null || attackObj == null)
-        {
-            Debug.Log("設定が足りません");
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            attackObj.SetActive(false);
-        }
-
+        //Bulletの発射位置を取得
+        BulletPoint = transform.Find("BulletPoint").localPosition;
+        InvokeRepeating("Attack",1,2);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-     
-    private void Attack()
+
+    void Attack()
     {
-        anim.SetTrigger("attack");
         Debug.Log("a");
-        GameObject g = Instantiate(attackObj);
-        g.transform.SetParent(transform);
-        g.transform.position = attackObj.transform.position;
-        g.transform.rotation = attackObj.transform.rotation;
-        g.SetActive(true);
+        Instantiate(Sunflower_bullet,transform.position + BulletPoint,Quaternion.identity);
+
+        anim.SetBool("attack",true);
+        Invoke("AnimEnd",0.5f);
+    }
+
+    void AnimEnd()
+    {
+        anim.SetBool("attack",false);;
     }
 }

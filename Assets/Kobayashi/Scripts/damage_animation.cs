@@ -35,7 +35,7 @@ public class damage_animation : MonoBehaviour
 
             // 追加
             // 敵の死亡フラグを立てる
-            GetComponent<Enemy_bird>().SetDead(true);
+
         }
         else
         {
