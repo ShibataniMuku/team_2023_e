@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -635922422874202969}
   m_Layer: 0
   m_Name: FrameEnemy_bullet3
-  m_TagString: EnemyAttack
+  m_TagString: Frame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df16ea96dacbab49a54aba2d619e9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedX: -5
-  SpeedY: -2
+  SpeedX: -3
+  SpeedY: -1
 --- !u!70 &-635922422874202969
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -132,6 +132,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13671432, y: -0.2734274}
-  m_Size: {x: 1.8865764, y: 1.6031523}
+  m_Offset: {x: -0.13671434, y: -0.30380762}
+  m_Size: {x: 1.8865774, y: 0.4790711}
   m_Direction: 1

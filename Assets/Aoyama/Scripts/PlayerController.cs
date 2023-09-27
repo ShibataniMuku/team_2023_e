@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip shot;
     public AudioClip jump;
 
-    int maxWater = 50000;
+    int maxWater = 50;
     int Water;
     
     bool right = false;
@@ -127,6 +127,7 @@ public class PlayerController : MonoBehaviour
     {
         if(slider.value != 0)
         {
+            Debug.Log("c");
             Instantiate(BulletObj,transform.position + ShotPoint,Quaternion.identity);
             
             anim.SetTrigger("Shot");
@@ -173,7 +174,13 @@ public class PlayerController : MonoBehaviour
         //（Enemy Tagのオブジェクトに触れたら）Damage()を呼び出す
         else if(other.gameObject.CompareTag("Enemy"))
         {
-            damage.Damage();
+            damage.CollisionDamage();
+            anim.SetTrigger("Damage");
+        }
+
+        else if(other.gameObject.CompareTag("Bard"))
+        {
+            damage.BardDamage();
             anim.SetTrigger("Damage");
         }
     }
@@ -181,20 +188,42 @@ public class PlayerController : MonoBehaviour
     //攻撃を受けたら（EnemyAttack Tagのオブジェクトに触れたら）Damage()を呼び出す
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "EnemyAttack")
+        if(collision.tag == "Flower")
         {
-            damage.Damage();
+            damage.FlowerDamage();
             anim.SetTrigger("Damage");
         }
-        else if(collision.tag == "Arrow")
+        else if(collision.tag == "IR" && slider.value != 0)
         {
-            damage.Damage();
+            //水量から1を引く
+            Water = Water - 1;
+            //水量をSliderに反映。
+            slider.value = (float)Water / (float)maxWater;
             anim.SetTrigger("Damage");
         }
+        else if(collision.tag == "UV")
+        {
+            damage.UVDamage();
+            anim.SetTrigger("Damage");
+        }
+        else if(collision.tag == "Frame")
+        {
+            damage.FrameDamage();
+            anim.SetTrigger("Damage");
+        }
+        
         else if(collision.tag == "Goal")
         {
             SceneManager.LoadScene("GameClear");
             GameOverOrClear.CurrentSceneName();
         }
+    }
+
+    public void WaterHeal()
+    {
+        //水量から10を足す
+            Water = Water + 10;
+            //水量をSliderに反映。
+            slider.value = (float)Water / (float)maxWater;
     }
 }

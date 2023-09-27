@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4179920980945818619}
   - component: {fileID: 2071689592154319952}
   m_Layer: 0
-  m_Name: FrameEnemy_bullet2
+  m_Name: FrameEnemy_bulletR2
   m_TagString: Frame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770cdde21c62f4843bbc27f765ca5e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -3
+  Speed: 3
 --- !u!70 &2071689592154319952
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,6 +131,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12911892, y: -0.36188787}
-  m_Size: {x: 1.9017671, y: 0.6935385}
+  m_Offset: {x: -0.1291189, y: -0.28108305}
+  m_Size: {x: 1.9017671, y: 0.5028017}
   m_Direction: 1

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 70793748362161216}
   m_Layer: 0
   m_Name: Sunflower_bullet
-  m_TagString: EnemyAttack
+  m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,8 +118,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.44912818, y: -0.14035495}
-  m_Size: {x: 7.146678, y: 4.395811}
+  m_Offset: {x: 0.6276235, y: -0.5866099}
+  m_Size: {x: 5.599687, y: 2.4323294}
   m_Direction: 1
 --- !u!114 &70793748362161216
 MonoBehaviour:
@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2214dcb53c89e7543947777a2f835fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 3

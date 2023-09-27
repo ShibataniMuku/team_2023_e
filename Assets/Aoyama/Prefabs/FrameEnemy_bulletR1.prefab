@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1683285064682314428}
   - component: {fileID: 2117563305450838285}
-  - component: {fileID: -4179920980945818619}
-  - component: {fileID: 2071689592154319952}
+  - component: {fileID: -1908963745982840116}
+  - component: {fileID: -47381414037872443}
   m_Layer: 0
-  m_Name: FrameEnemy_bullet2
+  m_Name: FrameEnemy_bulletR1
   m_TagString: Frame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4179920980945818619
+--- !u!114 &-1908963745982840116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,11 +95,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 819868808536855144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 770cdde21c62f4843bbc27f765ca5e6f, type: 3}
+  m_Script: {fileID: 11500000, guid: b78b692230ceab442af10e2663fcaf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -3
---- !u!70 &2071689592154319952
+  SpeedX: 3
+  SpeedY: 1
+--- !u!70 &-47381414037872443
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +132,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12911892, y: -0.36188787}
-  m_Size: {x: 1.9017671, y: 0.6935385}
+  m_Offset: {x: -0.112300254, y: -0.17679772}
+  m_Size: {x: 1.9354044, y: 0.56067103}
   m_Direction: 1

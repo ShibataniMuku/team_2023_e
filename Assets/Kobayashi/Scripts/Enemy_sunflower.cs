@@ -10,8 +10,6 @@ public class Enemy_sunflower : MonoBehaviour
     public GameObject Sunflower_bullet;
 
     private Animator anim = null;
-
-    bool attack = false;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +37,6 @@ public class Enemy_sunflower : MonoBehaviour
 
     void AnimEnd()
     {
-        anim.SetBool("attack",false);;
+        anim.SetBool("attack",false);
     }
 }

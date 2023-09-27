@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fan : MonoBehaviour
 {
     public Hpbar heal;
+    public PlayerController waterHeal;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Fan : MonoBehaviour
         if(collision.tag == "Player")
         {
             heal.Heal();
+            waterHeal.WaterHeal();
             Destroy(this.gameObject);
         }
     }

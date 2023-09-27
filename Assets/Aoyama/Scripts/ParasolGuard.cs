@@ -49,7 +49,11 @@ public class ParasolGuard : MonoBehaviour
     //Arrow Tagのオブジェクトに触れるとそのオブジェクトを破壊する
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Arrow" && guard.enabled == true)
+        if(collision.tag == "UV" && guard.enabled == true)
+        {
+            Destroy(collision.gameObject);
+        }
+        else if(collision.tag == "IR" && guard.enabled == true)
         {
             Destroy(collision.gameObject);
         }
