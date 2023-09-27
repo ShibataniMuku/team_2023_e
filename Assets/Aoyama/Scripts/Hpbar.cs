@@ -49,9 +49,29 @@ public class Hpbar : MonoBehaviour
     }
 
     //Hpが減る
-    public void Damage()
+    public void CollisionDamage()
+    {
+        HPbar.value += -2;
+    }
+
+    public void BardDamage()
+    {
+        HPbar.value += -1;
+    }
+
+    public void FlowerDamage()
+    {
+        HPbar.value += -3;
+    }
+
+    public void FrameDamage()
     {
         HPbar.value += -5;
+    }
+
+    public void UVDamage()
+    {
+        HPbar.value += -1;
     }
 
     //Hpが回復する

@@ -13,6 +13,9 @@ TagManager:
   - UV
   - IR
   - EnemyAttack
+  - Bard
+  - Flower
+  - Frame
   layers:
   - Default
   - TransparentFX

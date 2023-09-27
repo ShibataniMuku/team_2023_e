@@ -10,11 +10,11 @@ public class Enemy_frameenemy : MonoBehaviour
     public GameObject FrameEnemy_bullet1;
     public GameObject FrameEnemy_bullet2;
     public GameObject FrameEnemy_bullet3;
+    public float X = 1.8f;
+    public float Y = 10f;
 
     private Animator anim = null;
     private float MoveSpeed = 0.3f;
-
-    bool attack = false;
     
     // Start is called before the first frame update
     void Start()
@@ -49,6 +49,6 @@ public class Enemy_frameenemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(1.8f, Mathf.Sin(Time.time) * MoveSpeed + 5, 0);
+        transform.position = new Vector3(X, Mathf.Sin(Time.time) * MoveSpeed + Y, 0);
     }
 }

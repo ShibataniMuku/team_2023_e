@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 一応キーボードでも動かせるようにする...
-public class KeyOperation : MonoBehaviour{
+public class KeyOperation : MonoBehaviour
+{
     public PlayerController PlayerController;
     void Update(){
         // 左移動 = 左矢印キー...

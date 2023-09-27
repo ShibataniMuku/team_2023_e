@@ -7,12 +7,15 @@ public class damage_animation : MonoBehaviour
     public AudioClip bulletHitSound; // Bulletが当たったときのサウンド
     public AudioClip destroySound;
 
+    private AudioSource audioSource;
     private bool isDestroyed = false; // 破壊済みフラグ
     private bool hasPlayedSound = false; // サウンド再生フラグ
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        //AudioSourceをコンポーネントから取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,6 +51,7 @@ public class damage_animation : MonoBehaviour
         // もしもぶつかった相手に「Bullet」というタグ（Tag）がついていたら、
         if (other.gameObject.CompareTag("Bullet"))
         {
+            Debug.Log("b");
             // 敵のHPを１ずつ減少させる
             enemyHP -= 1;
             // プレイヤーの弾を削除する
